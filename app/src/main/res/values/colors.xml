@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="blanco">#FFFFFFFF</color>
+    <color name="verdeWhatsApp">#25d366</color>
+    <color name="grisClaro">#BDB8B8</color>
+    <color name="gris">#838383</color>
+
+</resources>
