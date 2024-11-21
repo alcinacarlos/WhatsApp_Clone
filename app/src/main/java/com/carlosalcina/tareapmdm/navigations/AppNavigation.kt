@@ -6,7 +6,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.*
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.carlosalcina.tareapmdm.R
 import com.carlosalcina.tareapmdm.model.Persona
 import com.carlosalcina.tareapmdm.screens.FirstScreen
 import com.carlosalcina.tareapmdm.screens.SecondScreen
@@ -22,10 +21,9 @@ fun AppNavigation(personas: List<Persona>){
         }
         composable(
             route = AppScreen.SecondScreen.route + "/{id}",
-            arguments = listOf(navArgument(name = "id") {type=
-                NavType.IntType})
+            arguments = listOf(navArgument(name = "id") {
+                type= NavType.IntType})
         ) {
-
             val id = it.arguments?.getInt("id") ?: 1
             val persona = personas.find { it.id == id }!!
 
