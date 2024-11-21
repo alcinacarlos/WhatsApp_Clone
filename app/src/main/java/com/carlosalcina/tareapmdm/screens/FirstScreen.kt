@@ -260,8 +260,8 @@ fun CameraIcon() {
 }
 
 private fun formatearMensaje(input: String): String {
-    return if (input.length > 29) {
-        "${input.substring(0, 29)}..."
+    return if (input.length > 28) {
+        "${input.substring(0, 28)}..."
     } else {
         input
     }

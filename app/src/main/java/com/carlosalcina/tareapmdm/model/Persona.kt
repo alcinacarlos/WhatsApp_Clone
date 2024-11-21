@@ -6,5 +6,5 @@ data class Persona(
     val nombre: String,
     val image: Int,
     val ultimaHoraConectado: String,
-    val mensajes: List<Mensaje>
+    var mensajes: List<Mensaje>
 )

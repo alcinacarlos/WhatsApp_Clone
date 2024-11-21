@@ -12,6 +12,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        PersonasBD.generarPersonas(100)
         setContent {
             AppNavigation(PersonasBD.personas)
         }
