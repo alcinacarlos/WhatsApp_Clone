@@ -9,15 +9,11 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.*
-import androidx.compose.material.icons.extended.*
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.sharp.Send
 import androidx.compose.material.icons.rounded.AttachFile
-import androidx.compose.material.icons.rounded.Send
 import androidx.compose.material.icons.sharp.CameraAlt
 import androidx.compose.material.icons.sharp.EmojiEmotions
-import androidx.compose.material.icons.sharp.Send
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -29,11 +25,8 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.max
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.carlosalcina.tareapmdm.PersonasBD
-import com.carlosalcina.tareapmdm.PersonasBD.personas
 import com.carlosalcina.tareapmdm.R
 import com.carlosalcina.tareapmdm.model.*
 import java.time.LocalTime
@@ -43,12 +36,16 @@ import androidx.compose.ui.input.key.key
 
 @Composable
 fun SecondScreen(navController: NavController, persona: Persona) {
-    Column {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .imePadding()
+    ) {
         HeaderEnChat(navController, persona)
+
         Chat(persona)
     }
 }
-
 @Composable
 fun MensajeEnChat(
     mensaje: Mensaje
@@ -128,13 +125,13 @@ fun Chat(persona: Persona) {
             }
         }
 
-        MensajeEnviar(persona, mensajes)
+        MensajeEnviar(mensajes)
     }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MensajeEnviar(persona: Persona, mensajes: MutableList<Mensaje>) {
+fun MensajeEnviar(mensajes: MutableList<Mensaje>) {
     var text by remember { mutableStateOf("") }
 
     Row(
@@ -271,7 +268,6 @@ fun HeaderEnChat(navController: NavController, persona: Persona) {
                         modifier = Modifier.padding(5.dp)
                     )
                 }
-
             }
 
             Row(
@@ -285,6 +281,7 @@ fun HeaderEnChat(navController: NavController, persona: Persona) {
         }
     }
 }
+
 
 @Composable
 fun ImagenChat(persona: Persona) {
